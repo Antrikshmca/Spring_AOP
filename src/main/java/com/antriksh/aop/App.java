@@ -12,10 +12,14 @@ public class App {
 		AbstractApplicationContext con= new AnnotationConfigApplicationContext(AppConfig.class);
 		Student st = con.getBean("student",Student.class);
 		//jointpoint
-		st.studyAnything();
+		int s=st.studyAnything(7,9);
+		System.out.println("returning value "+ s);
 		
-		Employee emp = con.getBean("employee",Employee.class);
-		emp.studySomething();
+		st.doOperation();
+		
+		/*
+		 * Employee emp = con.getBean("employee",Employee.class); emp.studySomething();
+		 */
 		
 	}
 }
